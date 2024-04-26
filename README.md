@@ -126,9 +126,9 @@ input[type="button"]{
 
 
 ## OUTPUT:
+![c:\Users\admin\Pictures\Screenshots\Screenshot 2024-04-26 185415.png](<Screenshot 2024-04-26 185415.png>)
+![alt text](<Screenshot 2024-04-26 185427.png>)
 
-![alt text](<Screenshot 2024-04-26 184240-1.png>)
-![alt text](<Screenshot 2024-04-26 184259-1.png>)
 
 ## RESULT:
 The program for designing a standard calculator using HTML and CSS is executed successfully.
