@@ -82,7 +82,7 @@ else {
 </body>
 </html>
 ```
-index.html
+index.js
 ```
 function display(value){
     document.getElementById("result").value+=value;
@@ -97,7 +97,7 @@ function display(value){
     return y
 }
 ```
-style.html
+style.css
 ```
 table{
     border: 5px solid black;
