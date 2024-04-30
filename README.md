@@ -28,106 +28,144 @@ Publish the website in the given URL.
 
 cal.html
 ```
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CALCULATOR</title>
-<script>
-function fn(e){
-    if (e.innerHTML == '=') {
-        output. value = eval (output.value);
-}
-else if (e.id == 'back') {
-    v = output. value;
-    output. value = v.substring(0, v.length - 1);
-}
-else if (e. innerHTML == 'C') {
-    output. value = '';
-}
-else {
-    output.value += e.innerHTML;
-}
-}
-</script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STANDARD CALCULATOR</title>
+    <style>
+        .out-container{
+            width: 25%;
+            margin: auto;
+            margin-top: 3rem;
+            background-color: rgb(17, 11, 11);
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 2rem;
+            padding: 15px;
+            padding-bottom: 30px;
+            border-radius: 30px;
+            height: 70%;
+        }
+        .inp{
+            width: 90%;
+            height: 2rem;
+            margin: 5px;
+            border-radius: 15px;
+            border: none;
+        }
+        .btn-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .btn{
+            width: 4rem;
+            height: 4rem;
+            padding: 5px;   
+            margin:10px auto;
+            cursor: pointer;
+            display: grid;
+            place-content:center;
+            border-radius: 50%;
+        }
+
+        .yellow{
+            background-color: rgb(255, 81, 0);
+            width: 90%;
+            margin: 5px auto;
+            border-radius: 15px;
+            height: 3rem;
+        }
+        .blue{
+            background-color: rgb(45, 4, 252);
+        }
+        .red{
+            background-color: rgb(253, 66, 66);
+        }
+        .green{
+            background-color: rgb(1, 9, 253);
+        }
+        h5{
+            margin: 15px auto;
+        }
+        .inp{
+            font-size: 2rem;
+            padding: 10px 5px; 
+        }
+    </style>
 </head>
 <body>
-    <div class="bg-warning mx-auto text-center text-green" style="width: 24rem;"><b>SAI SANJAY R</b></div>
-    <div class="bg-warning mx-auto text-center text-pink" style="width: 24rem;"><b>212223040178</b></div>
-    <div class="bg-warning row mx-auto text-center" style="width: 24rem;" >
-         <div class="col-12 my-4"><input type="text" name="" id="output" style="width: 100%;height: 50px;border-radius: 25px;"></div> 
-            <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)" >(</div> 
-            <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">)</div> 
-            <div class="m-3 col-2 btn btn-danger rounded-4" onclick="fn(this)">C</div> 
-            <div class="m-3 col-2 btn btn-danger rounded-4" onclick="fn(this)" id="pink"><i class="bi bi-backspace"></i>
-</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">7</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">8</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">9</div> 
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">*</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">4</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">5</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">6</div>
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">-</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">1</div> 
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">2</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">3</div>
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">+</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">0</div>
-<div class="m-3 col-2 btn btn-success rounded-4" btn-success onclick="fn(this)">.</div>
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">%</div>
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">/</div> 
-<div class="m-3 col-11 btn btn-dark rounded-4" onclick="fn(this)">=</div>
-</div>
+    <div class="out-container">
+        <h5>SAI SANJAY R(212223040178)</h5>
+        <input type="text" name="" id="inp" class="inp">
+        
+        <div class="btn-container">
+            <div onclick = "fn(this)" class="btn blue">(</div>
+            <div onclick = "fn(this)" class="btn blue">)</div>
+            <div onclick = "fn(this)" class="btn red">C</div>
+            <div onclick = "fn(this)" class="btn red" id="back">&lt;</div>
+        </div>
+
+        <div class="btn-container">
+            <div onclick = "fn(this)" class="btn green">1</div>
+            <div onclick = "fn(this)" class="btn green">2</div>
+            <div onclick = "fn(this)" class="btn green">3</div>
+            <div onclick = "fn(this)" class="btn blue">/</div>
+        </div>
+
+        <div class="btn-container">
+            <div onclick = "fn(this)" class="btn green">4</div>
+            <div onclick = "fn(this)" class="btn green">5</div>
+            <div onclick = "fn(this)" class="btn green">6</div>
+            <div onclick = "fn(this)" class="btn blue">*</div>
+        </div>
+
+        <div class="btn-container">
+            <div onclick = "fn(this)" class="btn green">7</div>
+            <div onclick = "fn(this)" class="btn green">8</div>
+            <div onclick = "fn(this)" class="btn green">9</div>
+            <div onclick = "fn(this)" class="btn blue">-</div>
+        </div>
+
+        <div class="btn-container">
+            <div onclick = "fn(this)" class="btn green">0</div>
+            <div onclick = "fn(this)" class="btn green">.</div>
+            <div onclick = "fn(this)" class="btn blue">%</div>
+            <div onclick = "fn(this)" class="btn blue">+</div>    
+        </div>
+        <div class="btn yellow" onclick = "fn(this)">=</div>
+
+    </div>
+
+    <script>
+        const fn = (e) => {
+            if(e.innerHTML =="="){
+                inp.value = eval(inp.value);
+            }
+            else if(e.innerHTML =="C"){
+                inp.value = "";
+            }
+            else if(e.id=="back"){
+                data = inp.value;
+                inp.value = data.substring(0,data.length-1);
+            }
+            else{
+                inp.value += e.innerHTML;
+            }
+        }
+    </script>
 </body>
 </html>
-```
-index.js
-```
-function display(value){
-    document.getElementById("result").value+=value;
- }
-  function clear(){
-     document.getElementById("result").value='';
-  }
-  function solve(){
-    let x = document.getElementById('result').value
-    let y = eval(x);
-    document.getElementById('result').value = y
-    return y
-}
-```
-style.css
-```
-table{
-    border: 5px solid black;
-    margin-left:auto;
-    margin-right: auto;
-    
-}
-input[type="text"]{
-    border: 3px solid black;
-    padding: 20px 30px;
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 20px;
-    background-color: bisque;
-}
-
-
-input[type="button"]{
-    width: 100%;
-    padding: 20px 40px;
-    background-color:rgb(60, 207, 230);
-    border-radius: 10px;
-    font-size: medium;
-}
 ```
 
 
 ## OUTPUT:
-![c:\Users\admin\Pictures\Screenshots\Screenshot 2024-04-26 185415.png](<Screenshot 2024-04-26 185415.png>)
-![alt text](<Screenshot 2024-04-26 185427.png>)
+![Screenshot 2024-04-30 104717](https://github.com/SAISANJAY10/Calc/assets/144228073/4f3e88d9-1c27-41cb-b305-896e976ba1fd)
+![Screenshot 2024-04-30 104727](https://github.com/SAISANJAY10/Calc/assets/144228073/cb229fe3-2d34-4f93-8983-9f1ce72c523d)
+
 
 
 ## RESULT:
